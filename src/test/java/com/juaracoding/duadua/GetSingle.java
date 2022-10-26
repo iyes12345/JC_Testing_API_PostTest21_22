@@ -25,7 +25,7 @@ public class GetSingle {
     }
 
     @Test(priority = 2)
-    public void testGetlist() {
+    public void testGetSingle() {
         given()
                 .get(endpoint)
                 .then()
