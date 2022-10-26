@@ -1,4 +1,4 @@
-package com.juaracoding;
+package com.juaracoding.duadua;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -8,10 +8,10 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
-public class TestAPIUser {
-    String endpoint = "https://reqres.in/api/users?page=1";
+public class GetList {
+    String endpoint = "https://mern-backend-8881.herokuapp.com/products";
 
-    @Test
+    @Test(priority = 1)
     public void testStatusCode() {
         Response response = RestAssured.get(endpoint);
         System.out.println(response.getBody().asString());
@@ -24,21 +24,12 @@ public class TestAPIUser {
         Assert.assertEquals(actual, 200);
     }
 
-    @Test
-    public void testIdOne() {
+    @Test(priority = 2)
+    public void testGetlist() {
         given()
                 .get(endpoint)
                 .then()
                 .statusCode(200)
-                .body("data.id[0]", equalTo(1));
-    }
-
-    @Test
-    public void testIdTwo() {
-        given()
-                .get(endpoint)
-                .then()
-                .statusCode(200)
-                .body("data.id[1]", equalTo(2));
+                .body("_id[17]", equalTo("630504187207f2c541e470e3"));
     }
 }

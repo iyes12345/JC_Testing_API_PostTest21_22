@@ -1,4 +1,4 @@
-package com.juaracoding;
+package com.juaracoding.contoh;
 
 import io.restassured.http.ContentType;
 import org.json.simple.JSONObject;
