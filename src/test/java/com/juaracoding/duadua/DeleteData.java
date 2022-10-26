@@ -12,18 +12,10 @@ import static org.hamcrest.Matchers.equalTo;
 public class DeleteData {
     String endpoint = "https://mern-backend-8881.herokuapp.com/products/63591637f3b6006945f67354";
 
-    @Test(priority = 1)
+    @Test
     public void testStatusCode() {
         when()
-                 .delete(endpoint);
+                .delete(endpoint);
 
-    }
-
-    @Test(priority = 2)
-    public void testDelete() {
-        given()
-                .get(endpoint)
-                .then()
-                .statusCode(200);
     }
 }
